@@ -109,6 +109,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.restartButton = new System.Windows.Forms.Button();
             this.panel_P3.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbP3_1)).BeginInit();
@@ -656,6 +657,7 @@
             this.tableLayoutPanel5.Controls.Add(this.pbMe1, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -666,10 +668,11 @@
             // pbMe13
             // 
             this.pbMe13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbMe13.Location = new System.Drawing.Point(723, 3);
+            this.pbMe13.Location = new System.Drawing.Point(720, 0);
+            this.pbMe13.Margin = new System.Windows.Forms.Padding(0);
             this.pbMe13.Name = "pbMe13";
-            this.pbMe13.Size = new System.Drawing.Size(60, 98);
-            this.pbMe13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbMe13.Size = new System.Drawing.Size(66, 104);
+            this.pbMe13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMe13.TabIndex = 13;
             this.pbMe13.TabStop = false;
             this.pbMe13.Click += new System.EventHandler(this.pictureBox43_Click);
@@ -677,10 +680,11 @@
             // pbMe12
             // 
             this.pbMe12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbMe12.Location = new System.Drawing.Point(663, 3);
+            this.pbMe12.Location = new System.Drawing.Point(660, 0);
+            this.pbMe12.Margin = new System.Windows.Forms.Padding(0);
             this.pbMe12.Name = "pbMe12";
-            this.pbMe12.Size = new System.Drawing.Size(54, 98);
-            this.pbMe12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbMe12.Size = new System.Drawing.Size(60, 104);
+            this.pbMe12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMe12.TabIndex = 12;
             this.pbMe12.TabStop = false;
             this.pbMe12.Click += new System.EventHandler(this.pictureBox42_Click);
@@ -688,10 +692,11 @@
             // pbMe11
             // 
             this.pbMe11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbMe11.Location = new System.Drawing.Point(603, 3);
+            this.pbMe11.Location = new System.Drawing.Point(600, 0);
+            this.pbMe11.Margin = new System.Windows.Forms.Padding(0);
             this.pbMe11.Name = "pbMe11";
-            this.pbMe11.Size = new System.Drawing.Size(54, 98);
-            this.pbMe11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbMe11.Size = new System.Drawing.Size(60, 104);
+            this.pbMe11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMe11.TabIndex = 11;
             this.pbMe11.TabStop = false;
             this.pbMe11.Click += new System.EventHandler(this.pictureBox41_Click);
@@ -699,10 +704,11 @@
             // pbMe10
             // 
             this.pbMe10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbMe10.Location = new System.Drawing.Point(543, 3);
+            this.pbMe10.Location = new System.Drawing.Point(540, 0);
+            this.pbMe10.Margin = new System.Windows.Forms.Padding(0);
             this.pbMe10.Name = "pbMe10";
-            this.pbMe10.Size = new System.Drawing.Size(54, 98);
-            this.pbMe10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbMe10.Size = new System.Drawing.Size(60, 104);
+            this.pbMe10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMe10.TabIndex = 10;
             this.pbMe10.TabStop = false;
             this.pbMe10.Click += new System.EventHandler(this.pictureBox40_Click);
@@ -710,10 +716,11 @@
             // pbMe9
             // 
             this.pbMe9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbMe9.Location = new System.Drawing.Point(483, 3);
+            this.pbMe9.Location = new System.Drawing.Point(480, 0);
+            this.pbMe9.Margin = new System.Windows.Forms.Padding(0);
             this.pbMe9.Name = "pbMe9";
-            this.pbMe9.Size = new System.Drawing.Size(54, 98);
-            this.pbMe9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbMe9.Size = new System.Drawing.Size(60, 104);
+            this.pbMe9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMe9.TabIndex = 9;
             this.pbMe9.TabStop = false;
             this.pbMe9.Click += new System.EventHandler(this.pictureBox39_Click);
@@ -721,10 +728,11 @@
             // pbMe8
             // 
             this.pbMe8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbMe8.Location = new System.Drawing.Point(423, 3);
+            this.pbMe8.Location = new System.Drawing.Point(420, 0);
+            this.pbMe8.Margin = new System.Windows.Forms.Padding(0);
             this.pbMe8.Name = "pbMe8";
-            this.pbMe8.Size = new System.Drawing.Size(54, 98);
-            this.pbMe8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbMe8.Size = new System.Drawing.Size(60, 104);
+            this.pbMe8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMe8.TabIndex = 8;
             this.pbMe8.TabStop = false;
             this.pbMe8.Click += new System.EventHandler(this.pictureBox38_Click);
@@ -732,10 +740,11 @@
             // pbMe7
             // 
             this.pbMe7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbMe7.Location = new System.Drawing.Point(363, 3);
+            this.pbMe7.Location = new System.Drawing.Point(360, 0);
+            this.pbMe7.Margin = new System.Windows.Forms.Padding(0);
             this.pbMe7.Name = "pbMe7";
-            this.pbMe7.Size = new System.Drawing.Size(54, 98);
-            this.pbMe7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbMe7.Size = new System.Drawing.Size(60, 104);
+            this.pbMe7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMe7.TabIndex = 7;
             this.pbMe7.TabStop = false;
             this.pbMe7.Click += new System.EventHandler(this.pictureBox37_Click);
@@ -743,10 +752,11 @@
             // pbMe6
             // 
             this.pbMe6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbMe6.Location = new System.Drawing.Point(303, 3);
+            this.pbMe6.Location = new System.Drawing.Point(300, 0);
+            this.pbMe6.Margin = new System.Windows.Forms.Padding(0);
             this.pbMe6.Name = "pbMe6";
-            this.pbMe6.Size = new System.Drawing.Size(54, 98);
-            this.pbMe6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbMe6.Size = new System.Drawing.Size(60, 104);
+            this.pbMe6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMe6.TabIndex = 6;
             this.pbMe6.TabStop = false;
             this.pbMe6.Click += new System.EventHandler(this.pictureBox36_Click);
@@ -754,10 +764,11 @@
             // pbMe5
             // 
             this.pbMe5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbMe5.Location = new System.Drawing.Point(243, 3);
+            this.pbMe5.Location = new System.Drawing.Point(240, 0);
+            this.pbMe5.Margin = new System.Windows.Forms.Padding(0);
             this.pbMe5.Name = "pbMe5";
-            this.pbMe5.Size = new System.Drawing.Size(54, 98);
-            this.pbMe5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbMe5.Size = new System.Drawing.Size(60, 104);
+            this.pbMe5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMe5.TabIndex = 5;
             this.pbMe5.TabStop = false;
             this.pbMe5.Click += new System.EventHandler(this.pictureBox35_Click);
@@ -765,10 +776,11 @@
             // pbMe4
             // 
             this.pbMe4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbMe4.Location = new System.Drawing.Point(183, 3);
+            this.pbMe4.Location = new System.Drawing.Point(180, 0);
+            this.pbMe4.Margin = new System.Windows.Forms.Padding(0);
             this.pbMe4.Name = "pbMe4";
-            this.pbMe4.Size = new System.Drawing.Size(54, 98);
-            this.pbMe4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbMe4.Size = new System.Drawing.Size(60, 104);
+            this.pbMe4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMe4.TabIndex = 4;
             this.pbMe4.TabStop = false;
             this.pbMe4.Click += new System.EventHandler(this.pictureBox34_Click);
@@ -776,10 +788,11 @@
             // pbMe3
             // 
             this.pbMe3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbMe3.Location = new System.Drawing.Point(123, 3);
+            this.pbMe3.Location = new System.Drawing.Point(120, 0);
+            this.pbMe3.Margin = new System.Windows.Forms.Padding(0);
             this.pbMe3.Name = "pbMe3";
-            this.pbMe3.Size = new System.Drawing.Size(54, 98);
-            this.pbMe3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbMe3.Size = new System.Drawing.Size(60, 104);
+            this.pbMe3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMe3.TabIndex = 3;
             this.pbMe3.TabStop = false;
             this.pbMe3.Click += new System.EventHandler(this.pictureBox33_Click);
@@ -787,10 +800,11 @@
             // pbMe2
             // 
             this.pbMe2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbMe2.Location = new System.Drawing.Point(63, 3);
+            this.pbMe2.Location = new System.Drawing.Point(60, 0);
+            this.pbMe2.Margin = new System.Windows.Forms.Padding(0);
             this.pbMe2.Name = "pbMe2";
-            this.pbMe2.Size = new System.Drawing.Size(54, 98);
-            this.pbMe2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbMe2.Size = new System.Drawing.Size(60, 104);
+            this.pbMe2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMe2.TabIndex = 2;
             this.pbMe2.TabStop = false;
             this.pbMe2.Click += new System.EventHandler(this.pictureBox32_Click);
@@ -798,10 +812,11 @@
             // pbMe1
             // 
             this.pbMe1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbMe1.Location = new System.Drawing.Point(3, 3);
+            this.pbMe1.Location = new System.Drawing.Point(0, 0);
+            this.pbMe1.Margin = new System.Windows.Forms.Padding(0);
             this.pbMe1.Name = "pbMe1";
-            this.pbMe1.Size = new System.Drawing.Size(54, 98);
-            this.pbMe1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbMe1.Size = new System.Drawing.Size(60, 104);
+            this.pbMe1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbMe1.TabIndex = 1;
             this.pbMe1.TabStop = false;
             this.pbMe1.Click += new System.EventHandler(this.pictureBox31_Click);
@@ -1112,12 +1127,23 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // restartButton
+            // 
+            this.restartButton.Font = new System.Drawing.Font("Tw Cen MT", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.restartButton.Location = new System.Drawing.Point(37, 39);
+            this.restartButton.Name = "restartButton";
+            this.restartButton.Size = new System.Drawing.Size(100, 34);
+            this.restartButton.TabIndex = 18;
+            this.restartButton.Text = "Restart ⟳";
+            this.restartButton.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(1099, 725);
+            this.Controls.Add(this.restartButton);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel_P4);
@@ -1136,6 +1162,7 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
+            this.ForeColor = System.Drawing.Color.Blue;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1117, 772);
@@ -1302,6 +1329,7 @@
         private System.Windows.Forms.PictureBox pbP4_3;
         private System.Windows.Forms.PictureBox pbP4_1;
         private System.Windows.Forms.PictureBox pbP4_2;
+        private System.Windows.Forms.Button restartButton;
     }
 }
 

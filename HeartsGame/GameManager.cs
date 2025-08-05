@@ -10,6 +10,9 @@ namespace HeartsGame
         public List<Player> Players { get; set; } = new List<Player>();
         private List<Card> deck = new List<Card>();
         private Random rng = new Random();
+        bool isFirstTrick = true;
+        string leadSuit = null;
+
 
         public GameManager()
         {

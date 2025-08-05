@@ -3,23 +3,23 @@
   "WorkspaceRootPath": "C:\\Users\\HP\\Desktop\\Hearts\\HeartsGame\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7F9D2AB7-4362-4419-BA7E-0419988054B2}|HeartsGame\\HeartsGame.csproj|c:\\users\\hp\\desktop\\hearts\\heartsgame\\heartsgame\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{7F9D2AB7-4362-4419-BA7E-0419988054B2}|HeartsGame\\HeartsGame.csproj|solutionrelative:heartsgame\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7F9D2AB7-4362-4419-BA7E-0419988054B2}|HeartsGame\\HeartsGame.csproj|C:\\Users\\HP\\Desktop\\Hearts\\HeartsGame\\heartsgame\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7F9D2AB7-4362-4419-BA7E-0419988054B2}|HeartsGame\\HeartsGame.csproj|solutionrelative:heartsgame\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7F9D2AB7-4362-4419-BA7E-0419988054B2}|HeartsGame\\HeartsGame.csproj|c:\\users\\hp\\desktop\\hearts\\heartsgame\\heartsgame\\players.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7F9D2AB7-4362-4419-BA7E-0419988054B2}|HeartsGame\\HeartsGame.csproj|solutionrelative:heartsgame\\players.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7F9D2AB7-4362-4419-BA7E-0419988054B2}|HeartsGame\\HeartsGame.csproj|c:\\users\\hp\\desktop\\hearts\\heartsgame\\heartsgame\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7F9D2AB7-4362-4419-BA7E-0419988054B2}|HeartsGame\\HeartsGame.csproj|solutionrelative:heartsgame\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7F9D2AB7-4362-4419-BA7E-0419988054B2}|HeartsGame\\HeartsGame.csproj|c:\\users\\hp\\desktop\\hearts\\heartsgame\\heartsgame\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7F9D2AB7-4362-4419-BA7E-0419988054B2}|HeartsGame\\HeartsGame.csproj|C:\\Users\\HP\\Desktop\\Hearts\\HeartsGame\\heartsgame\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7F9D2AB7-4362-4419-BA7E-0419988054B2}|HeartsGame\\HeartsGame.csproj|solutionrelative:heartsgame\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7F9D2AB7-4362-4419-BA7E-0419988054B2}|HeartsGame\\HeartsGame.csproj|c:\\users\\hp\\desktop\\hearts\\heartsgame\\heartsgame\\cards.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7F9D2AB7-4362-4419-BA7E-0419988054B2}|HeartsGame\\HeartsGame.csproj|C:\\Users\\HP\\Desktop\\Hearts\\HeartsGame\\heartsgame\\players.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F9D2AB7-4362-4419-BA7E-0419988054B2}|HeartsGame\\HeartsGame.csproj|solutionrelative:heartsgame\\players.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F9D2AB7-4362-4419-BA7E-0419988054B2}|HeartsGame\\HeartsGame.csproj|C:\\Users\\HP\\Desktop\\Hearts\\HeartsGame\\heartsgame\\cards.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7F9D2AB7-4362-4419-BA7E-0419988054B2}|HeartsGame\\HeartsGame.csproj|solutionrelative:heartsgame\\cards.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -34,26 +34,26 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "GameManager.cs",
               "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Hearts\\HeartsGame\\HeartsGame\\GameManager.cs",
               "RelativeDocumentMoniker": "HeartsGame\\GameManager.cs",
               "ToolTip": "C:\\Users\\HP\\Desktop\\Hearts\\HeartsGame\\HeartsGame\\GameManager.cs",
               "RelativeToolTip": "HeartsGame\\GameManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-30T17:56:37.074Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Players.cs",
               "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Hearts\\HeartsGame\\HeartsGame\\Players.cs",
               "RelativeDocumentMoniker": "HeartsGame\\Players.cs",
               "ToolTip": "C:\\Users\\HP\\Desktop\\Hearts\\HeartsGame\\HeartsGame\\Players.cs",
               "RelativeToolTip": "HeartsGame\\Players.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-30T17:38:26.012Z",
               "EditorCaption": ""
@@ -66,7 +66,7 @@
               "RelativeDocumentMoniker": "HeartsGame\\Cards.cs",
               "ToolTip": "C:\\Users\\HP\\Desktop\\Hearts\\HeartsGame\\HeartsGame\\Cards.cs",
               "RelativeToolTip": "HeartsGame\\Cards.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-30T17:37:29.683Z",
               "EditorCaption": ""
@@ -74,19 +74,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Hearts\\HeartsGame\\HeartsGame\\Form1.cs",
-              "RelativeDocumentMoniker": "HeartsGame\\Form1.cs",
-              "ToolTip": "C:\\Users\\HP\\Desktop\\Hearts\\HeartsGame\\HeartsGame\\Form1.cs",
-              "RelativeToolTip": "HeartsGame\\Form1.cs",
-              "ViewState": "AgIAAIIAAAAAAAAAAAAkwIwAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-29T22:59:17.871Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Hearts\\HeartsGame\\HeartsGame\\Form1.cs",
               "RelativeDocumentMoniker": "HeartsGame\\Form1.cs",
@@ -95,6 +82,19 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-29T21:25:05.066Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\Hearts\\HeartsGame\\HeartsGame\\Form1.cs",
+              "RelativeDocumentMoniker": "HeartsGame\\Form1.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\Hearts\\HeartsGame\\HeartsGame\\Form1.cs",
+              "RelativeToolTip": "HeartsGame\\Form1.cs",
+              "ViewState": "AgIAAD4BAAAAAAAAAAAIwDUBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-29T22:59:17.871Z",
+              "EditorCaption": ""
             }
           ]
         }
