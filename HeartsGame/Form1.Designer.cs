@@ -1134,8 +1134,9 @@
             this.restartButton.Name = "restartButton";
             this.restartButton.Size = new System.Drawing.Size(100, 34);
             this.restartButton.TabIndex = 18;
-            this.restartButton.Text = "Restart ⟳";
+            this.restartButton.Text = "Start";
             this.restartButton.UseVisualStyleBackColor = true;
+            this.restartButton.Click += new System.EventHandler(this.restartButton_Click);
             // 
             // Form1
             // 

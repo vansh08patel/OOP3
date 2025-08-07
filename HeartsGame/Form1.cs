@@ -27,6 +27,11 @@ namespace HeartsGame
         bool isFirstTrick = true;
         string leadSuit = null;
 
+        List<Card> currentTrick = new List<Card>();
+        Dictionary<int, Card> playedCards = new Dictionary<int, Card>();
+        int trickCount = 0;
+
+
 
 
 
@@ -39,7 +44,6 @@ namespace HeartsGame
         {
             if (!isDealt)
             {
-                StartGame();
                 isDealt = true; 
             }
             else
@@ -217,13 +221,11 @@ namespace HeartsGame
                 if (panel.Controls[i] is PictureBox pb)
                 {
                     pb.Image = cardBackImage;
-                    pb.SizeMode = PictureBoxSizeMode.StretchImage;
-                    pb.Dock = DockStyle.Fill;
-                    pb.Margin = new Padding(0);
                     pb.Enabled = false;
                 }
             }
         }
+
 
         // click
         private async void PlayerCard_Click(object sender, EventArgs e)
@@ -236,10 +238,8 @@ namespace HeartsGame
 
             PictureBox clickedCard = sender as PictureBox;
             string cardId = clickedCard.Tag.ToString();
-
             var selectedCard = gameManager.Players[0].Hand.FirstOrDefault(c => c.Id == cardId);
 
-            // First Trick must start with 
             if (isFirstTrick)
             {
                 if (selectedCard.Suit != "C" || selectedCard.Value != "2")
@@ -248,13 +248,16 @@ namespace HeartsGame
                     return;
                 }
 
-                leadSuit = "C";         
-                isFirstTrick = false;  
+                leadSuit = "C";
+                isFirstTrick = false;
             }
             else
             {
-                // Must follow lead suit if possible
-                if (!string.IsNullOrEmpty(leadSuit))
+                if (string.IsNullOrEmpty(leadSuit))
+                {
+                    leadSuit = selectedCard.Suit;
+                }
+                else
                 {
                     bool hasLeadSuit = gameManager.Players[0].Hand.Any(c => c.Suit == leadSuit);
                     if (hasLeadSuit && selectedCard.Suit != leadSuit)
@@ -263,75 +266,176 @@ namespace HeartsGame
                         return;
                     }
                 }
-                else
-                {
-                    leadSuit = selectedCard.Suit; 
-                }
+
             }
 
-            // Play the card
+            // Play
             mytrick.Image = (Image)Properties.Resources.ResourceManager.GetObject(cardId);
             clickedCard.Image = null;
             clickedCard.Enabled = false;
 
+            if (playedCards.ContainsKey(0))
+            {
+                MessageBox.Show("You already played this trick.");
+                return;
+            }
+
             gameManager.Players[0].Hand.Remove(selectedCard);
+            playedCards[0] = selectedCard;
+            currentTrick.Add(selectedCard);
+
 
             currentPlayerIndex = 1;
             await AIPlayTurnAsync();
         }
 
-
-
         private async Task AIPlayTurnAsync()
         {
-            while (currentPlayerIndex != 0)
+            while (currentTrick.Count < 4 && currentPlayerIndex != 0)
             {
-                await Task.Delay(1000); 
+                await Task.Delay(800);
 
-                var currentAI = gameManager.Players[currentPlayerIndex];
-                PictureBox trickBox = GetTrickBoxForPlayer(currentPlayerIndex);
+                var ai = gameManager.Players[currentPlayerIndex];
+                var trickBox = GetTrickBoxForPlayer(currentPlayerIndex);
 
-                Card selectedCard = null;
+                Card selectedCard;
 
                 if (isFirstTrick)
                 {
-                    selectedCard = currentAI.Hand.FirstOrDefault(c => c.Id == "2C");
-                    if (selectedCard != null)
-                    {
-                        leadSuit = selectedCard.Suit; 
-                    }
-                    else
-                    {
-                        selectedCard = GetRandomCard(currentAI.Hand);
-                        leadSuit = selectedCard.Suit;
-                    }
-                    isFirstTrick = false; 
-                }
+                    selectedCard = ai.Hand.FirstOrDefault(c => c.Id == "2C");
+                    if (selectedCard == null)
+                        selectedCard = GetRandomCard(ai.Hand);
 
+                    leadSuit = selectedCard.Suit;
+                    isFirstTrick = false;
+                }
                 else
                 {
-                    // Follow the lead suit if possible
-                    var matchingSuitCards = currentAI.Hand.Where(c => c.Suit == leadSuit).ToList();
-                    if (matchingSuitCards.Any())
+                    bool hasLeadSuit = ai.Hand.Any(c => c.Suit == leadSuit);
+                    if (hasLeadSuit)
                     {
-                        selectedCard = GetRandomCard(matchingSuitCards);
+                        var suitCards = ai.Hand.Where(c => c.Suit == leadSuit).ToList();
+                        selectedCard = GetRandomCard(suitCards);
                     }
                     else
                     {
-                        selectedCard = GetRandomCard(currentAI.Hand); 
+                        selectedCard = GetRandomCard(ai.Hand);
                     }
                 }
 
-                // Show card on trick panel
                 trickBox.Image = (Image)Properties.Resources.ResourceManager.GetObject(selectedCard.Id);
-                currentAI.Hand.Remove(selectedCard);
+                ai.Hand.Remove(selectedCard);
+                // Remove one card image from the AI's panel
+                TableLayoutPanel aiPanel = GetPanelForPlayer(currentPlayerIndex);
+                HideTopCardFromPanel(aiPanel);
 
-                await Task.Delay(3000); 
+                playedCards[currentPlayerIndex] = selectedCard;
+                currentTrick.Add(selectedCard);
 
                 currentPlayerIndex = (currentPlayerIndex + 1) % 4;
             }
 
-            MessageBox.Show("Your turn!");
+            if (currentTrick.Count == 4)
+            {
+                await Task.Delay(500);
+                EvaluateTrick();
+            }
+            else if (currentPlayerIndex == 0)
+            {
+                MessageBox.Show("Your turn to play!");
+            }
+        }
+
+        void HideTopCardFromPanel(TableLayoutPanel panel)
+        {
+            for (int i = 0; i < panel.Controls.Count; i++)
+            {
+                if (panel.Controls[i] is PictureBox pb && pb.Image != null)
+                {
+                    pb.Image = null;
+                    break;
+                }
+            }
+        }
+
+        TableLayoutPanel GetPanelForPlayer(int index)
+        {
+            switch (index)
+            {
+                case 1: return tableLayoutPanel2;
+                case 2: return tableLayoutPanel3;
+                case 3: return tableLayoutPanel4;
+                default: return null;
+            }
+        }
+
+
+
+        void EvaluateTrick()
+        {
+
+            mytrick.Image = Player2trick.Image = Player3trick.Image = Player4trick.Image = null;
+
+            // Determine winner based on highest card of lead suit
+            var leadCards = playedCards.Where(p => p.Value.Suit == leadSuit).ToList();
+            var winner = leadCards.OrderByDescending(p => GetCardRank(p.Value.Value)).First().Key;
+
+            // Calculate score
+            int trickScore = 0;
+            foreach (var card in playedCards.Values)
+            {
+                if (card.Suit == "H") trickScore += 1;
+                if (card.Suit == "S" && card.Value == "Q") trickScore += 13;
+            }
+
+            gameManager.Players[winner].AddPoints(trickScore);
+            UpdateScoreLabels();
+
+            MessageBox.Show($"{gameManager.Players[winner].Name} wins the trick and gets {trickScore} points!");
+
+            // Reset for next trick
+            currentTrick.Clear();
+            playedCards.Clear();
+            trickCount++;
+            leadSuit = null;
+          
+
+
+            currentPlayerIndex = winner;
+            // Check if game is over
+            bool allHandsEmpty = gameManager.Players.All(p => p.Hand.Count == 0);
+            if (allHandsEmpty)
+            {
+                CalculateFinalScores();
+                return;
+            }
+            // If player starts next
+            if (currentPlayerIndex == 0)
+                MessageBox.Show("Your turn to start the next trick!");
+            else
+                _ = AIPlayTurnAsync();
+        }
+
+
+        int GetCardRank(string value)
+        {
+            switch (value)
+            {
+                case "2": return 2;
+                case "3": return 3;
+                case "4": return 4;
+                case "5": return 5;
+                case "6": return 6;
+                case "7": return 7;
+                case "8": return 8;
+                case "9": return 9;
+                case "10": return 10;
+                case "J": return 11;
+                case "Q": return 12;
+                case "K": return 13;
+                case "A": return 14;
+                default: return 0;
+            }
         }
 
 
@@ -341,6 +445,16 @@ namespace HeartsGame
             int index = new Random().Next(hand.Count);
             return hand[index];
         }
+
+        void UpdateScoreLabels()
+        {
+            My_Score.Text = gameManager.Players[0].Score.ToString();
+            Player2_Score.Text = gameManager.Players[1].Score.ToString();
+            Player3_Score.Text = gameManager.Players[2].Score.ToString();
+            Player4_Score.Text = gameManager.Players[3].Score.ToString();
+        }
+
+
 
         PictureBox GetTrickBoxForPlayer(int playerIndex)
         {
@@ -353,5 +467,45 @@ namespace HeartsGame
             }
         }
 
+        private void CalculateFinalScores()
+        {
+            StringBuilder result = new StringBuilder();
+            int lowestScore = int.MaxValue;
+            string winner = "";
+
+            foreach (var player in gameManager.Players)
+            {
+                result.AppendLine($"{player.Name}: {player.Score} points");
+
+                if (player.Score < lowestScore)
+                {
+                    lowestScore = player.Score;
+                    winner = player.Name;
+                }
+            }
+
+            result.AppendLine($"\n🏆 Winner: {winner}");
+
+            MessageBox.Show(result.ToString(), "Game Over");
+            Close();
+        }
+
+        private void restartButton_Click(object sender, EventArgs e)
+        {
+            if (!isDealt)
+            {
+                var result = MessageBox.Show("Ready to deal the cards and start a new game?", "Start Game", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    StartGame();
+                    isDealt = true;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Game is already in progress. Finish it or restart the app.");
+            }
+        }
     }
 }

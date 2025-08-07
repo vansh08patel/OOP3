@@ -10,8 +10,6 @@ namespace HeartsGame
         public List<Player> Players { get; set; } = new List<Player>();
         private List<Card> deck = new List<Card>();
         private Random rng = new Random();
-        bool isFirstTrick = true;
-        string leadSuit = null;
 
 
         public GameManager()
@@ -43,9 +41,7 @@ namespace HeartsGame
         // deal same card with players
         public void DealCards()
         {
-            if (Players.Count != 4)
-                throw new InvalidOperationException("Exactly 4 players must be initialized before dealing cards.");
-
+          
             for (int i = 0; i < Players.Count; i++)
             {
                 Players[i].Hand = deck.Skip(i * 13).Take(13).ToList();
