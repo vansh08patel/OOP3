@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -30,6 +31,7 @@ namespace HeartsGame
         List<Card> currentTrick = new List<Card>();
         Dictionary<int, Card> playedCards = new Dictionary<int, Card>();
         int trickCount = 0;
+        
 
 
 
@@ -38,6 +40,7 @@ namespace HeartsGame
         public Form1()
         {
             InitializeComponent();
+      
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
@@ -171,6 +174,7 @@ namespace HeartsGame
                     string cardId = myHand[i].Id;
                     pb.Image = (Image)Properties.Resources.ResourceManager.GetObject(cardId);
                     pb.Tag = cardId;
+                    
 
                     // Set visual properties to remove space
                     pb.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -187,9 +191,9 @@ namespace HeartsGame
 
 
             // Set card for other players
-            SetCardBacks(tableLayoutPanel2); 
-            SetCardBacks(tableLayoutPanel3); 
-            SetCardBacks(tableLayoutPanel4); 
+            SetCardBacks(tableLayoutPanel2);
+            SetCardBacks(tableLayoutPanel3);
+            SetCardBacks(tableLayoutPanel4);
 
             // Clear trick area
             mytrick.Image = null;
@@ -213,7 +217,6 @@ namespace HeartsGame
                 _ = AIPlayTurnAsync();
         }
 
-
         void SetCardBacks(TableLayoutPanel panel)
         {
             for (int i = 0; i < 13; i++)
@@ -227,7 +230,7 @@ namespace HeartsGame
         }
 
 
-        // click
+
         private async void PlayerCard_Click(object sender, EventArgs e)
         {
             if (!isMyTurn)
@@ -271,6 +274,7 @@ namespace HeartsGame
 
             // Play
             mytrick.Image = (Image)Properties.Resources.ResourceManager.GetObject(cardId);
+            
             clickedCard.Image = null;
             clickedCard.Enabled = false;
 
@@ -324,6 +328,8 @@ namespace HeartsGame
                 }
 
                 trickBox.Image = (Image)Properties.Resources.ResourceManager.GetObject(selectedCard.Id);
+                
+
                 ai.Hand.Remove(selectedCard);
                 // Remove one card image from the AI's panel
                 TableLayoutPanel aiPanel = GetPanelForPlayer(currentPlayerIndex);
@@ -345,6 +351,9 @@ namespace HeartsGame
                 MessageBox.Show("Your turn to play!");
             }
         }
+
+
+
 
         void HideTopCardFromPanel(TableLayoutPanel panel)
         {
@@ -375,6 +384,8 @@ namespace HeartsGame
         {
 
             mytrick.Image = Player2trick.Image = Player3trick.Image = Player4trick.Image = null;
+            
+
 
             // Determine winner based on highest card of lead suit
             var leadCards = playedCards.Where(p => p.Value.Suit == leadSuit).ToList();
@@ -398,7 +409,7 @@ namespace HeartsGame
             playedCards.Clear();
             trickCount++;
             leadSuit = null;
-          
+
 
 
             currentPlayerIndex = winner;
@@ -448,11 +459,12 @@ namespace HeartsGame
 
         void UpdateScoreLabels()
         {
-            My_Score.Text = gameManager.Players[0].Score.ToString();
-            Player2_Score.Text = gameManager.Players[1].Score.ToString();
-            Player3_Score.Text = gameManager.Players[2].Score.ToString();
-            Player4_Score.Text = gameManager.Players[3].Score.ToString();
+            My_Score.Text = $"Points - {gameManager.Players[0].Score}";
+            Player2_Score.Text = $"Points - {gameManager.Players[1].Score}";
+            Player3_Score.Text = $"Points - {gameManager.Players[2].Score}";
+            Player4_Score.Text = $"Points - {gameManager.Players[3].Score}";
         }
+
 
 
 
@@ -506,6 +518,14 @@ namespace HeartsGame
             {
                 MessageBox.Show("Game is already in progress. Finish it or restart the app.");
             }
+        }
+
+        
+
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

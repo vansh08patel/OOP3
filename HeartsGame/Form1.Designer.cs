@@ -1171,6 +1171,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Heart Game";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel_P3.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbP3_1)).EndInit();
