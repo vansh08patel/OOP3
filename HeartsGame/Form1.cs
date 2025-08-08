@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HeartsGame;
+using System.IO;
 
 
 
@@ -40,7 +41,9 @@ namespace HeartsGame
         public Form1()
         {
             InitializeComponent();
-      
+            var dir = Path.GetDirectoryName(SaveFile);
+            if (!string.IsNullOrWhiteSpace(dir) && !Directory.Exists(dir))
+                Directory.CreateDirectory(dir);
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
@@ -154,13 +157,13 @@ namespace HeartsGame
         void StartGame()
         {
             gameManager = new GameManager();
-
+            gameManager.Players.Clear();
             gameManager.Players.Add(new Player("You"));
             gameManager.Players.Add(new Player("Player 2"));
             gameManager.Players.Add(new Player("Player 3"));
             gameManager.Players.Add(new Player("Player 4"));
 
-
+            LoadScoresIfAny();
             gameManager.DealCards();
 
             cardBackImage = Properties.Resources.card_back;
@@ -216,6 +219,22 @@ namespace HeartsGame
             else
                 _ = AIPlayTurnAsync();
         }
+
+        private void LoadScoresIfAny()
+        {
+            if (gameManager == null || gameManager.Players == null || gameManager.Players.Count < 4)
+                return;
+
+            var saved = JsonStorage.Load<ScoreSave>(SaveFile);
+            if (saved == null || saved.Scores == null || saved.Scores.Count < 4) return;
+
+            for (int i = 0; i < 4; i++)
+                gameManager.Players[i].Score = saved.Scores[i];
+
+            UpdateScoreLabels();
+        }
+
+
 
         void SetCardBacks(TableLayoutPanel panel)
         {
@@ -354,6 +373,7 @@ namespace HeartsGame
 
 
 
+        private readonly string SaveFile = Path.Combine(Application.StartupPath, "data", "scores.json");
 
         void HideTopCardFromPanel(TableLayoutPanel panel)
         {
@@ -401,6 +421,13 @@ namespace HeartsGame
 
             gameManager.Players[winner].AddPoints(trickScore);
             UpdateScoreLabels();
+            // Save to JSON so scores persist
+            var save = new ScoreSave
+            {
+                Trick = trickCount,
+                Scores = gameManager.Players.Select(p => p.Score).ToList()
+            };
+            JsonStorage.Save(SaveFile, save);
 
             MessageBox.Show($"{gameManager.Players[winner].Name} wins the trick and gets {trickScore} points!");
 
@@ -459,6 +486,8 @@ namespace HeartsGame
 
         void UpdateScoreLabels()
         {
+            if (gameManager == null || gameManager.Players == null || gameManager.Players.Count < 4)
+                return;
             My_Score.Text = $"Points - {gameManager.Players[0].Score}";
             Player2_Score.Text = $"Points - {gameManager.Players[1].Score}";
             Player3_Score.Text = $"Points - {gameManager.Players[2].Score}";
@@ -510,6 +539,7 @@ namespace HeartsGame
 
                 if (result == DialogResult.Yes)
                 {
+                   
                     StartGame();
                     isDealt = true;
                 }
@@ -518,6 +548,8 @@ namespace HeartsGame
             {
                 MessageBox.Show("Game is already in progress. Finish it or restart the app.");
             }
+
+            
         }
 
         
